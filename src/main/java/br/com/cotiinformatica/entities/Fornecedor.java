@@ -14,8 +14,8 @@ import javax.persistence.Table;
 @Table(name = "fornecedor")
 public class Fornecedor {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id // chave primária
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
 	@Column(name = "idfornecedor")
 	private Integer idFornecedor;
 
@@ -25,7 +25,8 @@ public class Fornecedor {
 	@Column(name = "cnpj", length = 20, nullable = false, unique = true)
 	private String cnpj;
 
-	@OneToMany(mappedBy = "fornecedor")
+	//One (Fornecedor) To Many (Produtos) -> 1 Fornecedor para MUITOS Produtos
+	@OneToMany(mappedBy = "fornecedor") //nome do atributo na classe Produto onde foi mapeado a foreign key
 	private List<Produto> produtos;
 
 	public Fornecedor() {
@@ -74,8 +75,7 @@ public class Fornecedor {
 
 	@Override
 	public String toString() {
-		return "Fornecedor [idFornecedor=" + idFornecedor + ", nome=" + nome + ", cnpj=" + cnpj + ", produtos="
-				+ produtos + "]";
+		return "Fornecedor [idFornecedor=" + idFornecedor + ", nome=" + nome + ", cnpj=" + cnpj + "]";
 	}
 
 }
