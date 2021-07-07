@@ -18,7 +18,7 @@ public class MailSender {
 
 		SimpleMailMessage mailMessage = new SimpleMailMessage();
 
-		mailMessage.setFrom("cotiaulasnoreply@gmail.com");
+		mailMessage.setFrom("rsareas93@outlook.com");
 		mailMessage.setTo(to);
 		mailMessage.setSubject(subject);
 		mailMessage.setText(text);

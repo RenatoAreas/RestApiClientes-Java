@@ -17,12 +17,12 @@ public class MailConfiguration {
 		JavaMailSenderImpl mailSenderImpl = new JavaMailSenderImpl();
 
 		// configuração do serviço SMTP (envio de email)
-		mailSenderImpl.setHost("smtp.gmail.com");
+		mailSenderImpl.setHost("smtp.outlook.com");
 		mailSenderImpl.setPort(587);
 
 		// configuração da conta de email..
-		mailSenderImpl.setUsername("cotiaulasnoreply@gmail.com");
-		mailSenderImpl.setPassword("coti123456");
+		mailSenderImpl.setUsername("rsareas93@outlook.com");
+		mailSenderImpl.setPassword("Ren4to&C@roline");
 
 		Properties props = mailSenderImpl.getJavaMailProperties();
 		props.put("mail.transport.protocol", "smtp");

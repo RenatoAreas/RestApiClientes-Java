@@ -22,6 +22,7 @@ public class JwtConfiguration extends WebSecurityConfigurerAdapter {
 				UsernamePasswordAuthenticationFilter.class)
 				.authorizeRequests()
 				.antMatchers("/api/auth").permitAll()
+				.antMatchers("/api/recuperarsenha").permitAll()
 				.anyRequest()
 				.authenticated();
 	}
@@ -46,5 +47,4 @@ public class JwtConfiguration extends WebSecurityConfigurerAdapter {
 		public void configure(WebSecurity web) throws Exception {
 		     web.ignoring().antMatchers(SWAGGER);
 		}
-
 }
