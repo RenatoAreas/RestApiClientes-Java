@@ -1,6 +1,7 @@
 package br.com.cotiinformatica.config;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -23,6 +24,7 @@ public class JwtConfiguration extends WebSecurityConfigurerAdapter {
 				.authorizeRequests()
 				.antMatchers("/api/auth").permitAll()
 				.antMatchers("/api/recuperarsenha").permitAll()
+				.antMatchers(HttpMethod.OPTIONS,"/**").permitAll()
 				.anyRequest()
 				.authenticated();
 	}
